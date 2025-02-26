@@ -1,0 +1,291 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mec_bot">
+
+
+
+    <link name="base_link">
+        <inertial>
+        <origin xyz="8.32667268468867E-17 -1.40819985875818E-17 0.0381" rpy="0 0 0" />
+        <mass   value="7.49291568518671" />
+        <inertia    ixx="0.0457686414606789"    ixy="-7.41153828847513E-18" ixz="-5.32842965051177E-35"
+                    iyy="0.0947015718603489"    iyz="-1.69554890960821E-19" izz="0.133319202184799" />
+        </inertial>
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh   filename="file:///home/imbatman/mecbot_ws/src/mec_bot/meshes/base_link.STL" />
+        </geometry>
+        <material
+            name="red">
+        </material>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh   filename="file:///home/imbatman/mecbot_ws/src/mec_bot/meshes/base_link.STL" />
+        </geometry>
+        </collision>
+    </link>
+
+    <link name="RF_link">
+        <inertial>
+        <origin xyz="-1.8574E-09 0.0034189 1.0201E-08" rpy="0 0 0" />
+        <mass value="0.3168" />
+        <inertia ixx="0.00018552" ixy="1.473E-10" ixz="-3.0779E-11"
+                iyy="0.00032954"  iyz="2.6939E-11" izz="0.00018552" />
+        </inertial>
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="file:///home/imbatman/mecbot_ws/src/mec_bot/meshes/RF_link.STL" />
+        </geometry>
+        <material name="blue"> </material>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="file:///home/imbatman/mecbot_ws/src/mec_bot/meshes/RF_link.STL" />
+        </geometry>
+        </collision>
+    </link>
+
+    <link name="LF_wheel">
+        <inertial>
+        <origin xyz="9.0415E-09 -0.0029492 -8.5937E-09" rpy="0 0 0" />
+        <mass   value="0.31652" />
+        <inertia    ixx="0.0001855"     ixy="5.6035E-12"    ixz="3.7404E-13"
+                    iyy="0.00032954"    iyz="-3.8545E-11"   izz="0.0001855" />
+        </inertial>
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh   filename="file:///home/imbatman/mecbot_ws/src/mec_bot/meshes/LF_wheel.STL" />
+        </geometry>
+        <material
+            name="blue">
+        </material>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh   filename="file:///home/imbatman/mecbot_ws/src/mec_bot/meshes/LF_wheel.STL" />
+        </geometry>
+        </collision>
+    </link>
+
+    <link name="RR_link">
+        <inertial>
+        <origin     xyz="3.6141E-09 0.0034189 -9.3314E-09"  rpy="0 0 0" />
+        <mass   value="0.3168" />
+        <inertia    ixx="0.00018552"    ixy="-1.4001E-10"   ixz="-3.8352E-11"
+                    iyy="0.00032954"    iyz="-5.3653E-11"   izz="0.00018552" />
+        </inertial>
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh   filename="file:///home/imbatman/mecbot_ws/src/mec_bot/meshes/RR_link.STL" />
+        </geometry>
+        <material
+            name="blue">
+        </material>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh   filename="file:///home/imbatman/mecbot_ws/src/mec_bot/meshes/RR_link.STL" />
+        </geometry>
+        </collision>
+    </link>
+
+    <link name="LR_link">
+        <inertial>
+        <origin xyz="-1.0861E-08 -0.0029492 6.3455E-09" rpy="0 0 0" />
+        <mass   value="0.31652" />
+        <inertia    ixx="0.0001855"     ixy="-1.3103E-11"   ixz="4.5962E-13"
+                    iyy="0.00032954"    iyz="3.6382E-11"    izz="0.0001855" />
+        </inertial>
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh   filename="file:///home/imbatman/mecbot_ws/src/mec_bot/meshes/LR_link.STL" />
+        </geometry>
+        <material
+            name="blue">
+        </material>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh   filename="file:///home/imbatman/mecbot_ws/src/mec_bot/meshes/LR_link.STL" />
+        </geometry>
+        </collision>
+    </link>
+
+    <link name="lidar_link">
+        <inertial>
+        <origin xyz="2.7756E-17 4.9085E-34 -0.0381" rpy="0 0 0" />
+        <mass   value="0.61778" />
+        <inertia    ixx="0.00069749"    ixy="-1.6313E-52"   ixz="-7.6092E-36"
+                    iyy="0.00069749"    iyz="2.3106E-36"    izz="0.00079713" />
+        </inertial>
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh   filename="file:///home/imbatman/mecbot_ws/src/mec_bot/meshes/lidar_link.STL" />
+        </geometry>
+        <material
+            name="blue">
+        </material>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh   filename="file:///home/imbatman/mecbot_ws/src/mec_bot/meshes/lidar_link.STL" />
+        </geometry>
+        </collision>
+    </link>
+
+    <link name="camera_link">
+        <inertial>
+        <origin
+            xyz="-0.00635 5.3465E-18 -6.0573E-19"
+            rpy="0 0 0" />
+        <mass
+            value="0.016387" />
+        <inertia
+            ixx="4.4051E-06"
+            ixy="0"
+            ixz="0"
+            iyy="1.1013E-06"
+            iyz="-3.6274E-39"
+            izz="3.7443E-06" />
+        </inertial>
+        <visual>
+        <origin
+            xyz="0 0 0"
+            rpy="0 0 0" />
+        <geometry>
+            <mesh
+            filename="file:///home/imbatman/mecbot_ws/src/mec_bot/meshes/camera_link.STL" />
+        </geometry>
+        <material
+            name="">
+            <color
+            rgba="0.79216 0.81961 0.93333 1" />
+        </material>
+        </visual>
+        <collision>
+        <origin
+            xyz="0 0 0"
+            rpy="0 0 0" />
+        <geometry>
+            <mesh
+            filename="package://mec_bot/meshes/camera_link.STL" />
+        </geometry>
+        </collision>
+    </link>
+
+    <link name="base_footprint"/>
+
+    <joint name="base_joint" type="fixed">
+        <parent link="base_footprint"/>
+        <child link="base_link"/>
+        <origin xyz=" 0 0 0.1" rpy="0 0 0 "/>
+    </joint>
+
+    <joint name="RF_joint" type="continuous">
+        <origin
+        xyz="0.127 -0.16193 0.0381"
+        rpy="0 0 0" />
+        <parent
+        link="base_link" />
+        <child
+        link="RF_link" />
+        <axis
+        xyz="0 1 0" />
+        <dynamics
+        friction="0.2" />
+    </joint>
+
+    <joint name="RR_joint" type="continuous">
+        <origin
+        xyz="-0.127 -0.16193 0.0381"
+        rpy="0 0 0" />
+        <parent
+        link="base_link" />
+        <child
+        link="RR_link" />
+        <axis
+        xyz="0 1 0" />
+        <dynamics
+        friction="0.2" />
+    </joint>
+
+    <joint name="LF_joint" type="continuous">
+        <origin
+        xyz="0.127 0.16193 0.0381"
+        rpy="0 0 0" />
+        <parent
+        link="base_link" />
+        <child
+        link="LF_wheel" />
+        <axis
+        xyz="0 -1 0" />
+        <dynamics
+        friction="0.2" />
+    </joint>
+
+    <joint name="LR_joint" type="continuous">
+        <origin
+        xyz="-0.127 0.16193 0.0381"
+        rpy="0 0 0" />
+        <parent
+        link="base_link" />
+        <child
+        link="LR_link" />
+        <axis
+        xyz="0 -1 0" />
+        <dynamics
+        friction="0.2" />
+    </joint>
+
+    <joint name="lidar_joint" type="fixed">
+        <origin
+        xyz="0 0 0.1524"
+        rpy="0 0 0" />
+        <parent
+        link="base_link" />
+        <child
+        link="lidar_link" />
+        <axis
+        xyz="0 0 0" />
+    </joint>
+
+    <joint name="camera_joint" type="fixed">
+        <origin
+        xyz="0.2032 0 0.0381"
+        rpy="0 0 0" />
+        <parent
+        link="base_link" />
+        <child
+        link="camera_link" />
+        <axis
+        xyz="0 0 0" />
+    </joint>
+
+    <gazebo>
+        <plugin filename="libignition-gazebo-mecanum-drive-system.so" name="ignition::gazebo::systems::MecanumDrive">
+            <topic>cmd_vel</topic>
+            <front_left_joint>LF_joint</front_left_joint>
+            <front_right_joint>RF_joint</front_right_joint>
+            <back_left_joint>LR_joint</back_left_joint>
+            <back_right_joint>RR_joint</back_right_joint>
+            <wheel_separation>0.32386</wheel_separation>
+            <wheelbase>0.0762</wheelbase>
+            <wheel_radius>0.3</wheel_radius>
+            <min_acceleration>-5</min_acceleration>
+            <max_acceleration>5</max_acceleration>
+        </plugin>
+    </gazebo>
+
+</robot>
